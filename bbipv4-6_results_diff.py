@@ -1,3 +1,10 @@
+#!/usr/bin/env python3 -tt
+#-*- coding: UTF-8 -*-
+
+"""
+v0.3: Functional, albeit needs to be commented and a few minor bugs still to work out..
+"""
+
 from libnmap.parser import NmapParser
 import xmltodict
 
