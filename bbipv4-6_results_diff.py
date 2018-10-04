@@ -5,19 +5,31 @@
 v0.3: Functional, albeit needs to be commented and a few minor bugs still to work out..
 """
 
-from libnmap.parser import NmapParser
-import xmltodict
+from libnmap.parser import NmapParser  # ref. https://libnmap.readthedocs.io/
+import xmltodict  # ref. https://github.com/martinblech/xmltodict
 
-nmapv4_report = NmapParser.parse_fromfile('/tmp/v4-6test/dualhomed-ip4-tcp-26k.xml')
-v6xml = open("/tmp/v4-6test/dualhomed-ip6-tcp-26k.xml","r")
+# in case someone tries to run this in Python v2.x:
+try: 
+    input = raw_input
+except:
+    pass
+
+v4results = input("Specify the location of Nmap XML file containing IPv4 scan results (full path): ")
+v6results = input("Specify the location of Nmap XML file containing IPv6 scan results (full path): ")
+
+# started out parsing nmap xml with NmapParser...:
+nmapv4_report = NmapParser.parse_fromfile(v4results)
+
+# switched to parsing the v6 output file with xmltodict b/c NmapParser was confusing.. (and to get experience with different approach):
+v6xml = open(v6results,"r")
 v6results = xmltodict.parse(v6xml.read())
 
 for eachv4host in nmapv4_report.hosts:
     hostv4ports = eachv4host.get_open_ports()
     hostnamelist = eachv4host.hostnames
     if len(hostnamelist) != "1":
-        # print("We have more than one hostname!!")
-        hostv4name = "".join(hostnamelist[0].strip("."))
+        # print("Entry has more than one hostname - grabbing the first one..")
+        hostv4name = "".join(hostnamelist[0].strip("."))  # assume the orig / user-specified fqdn (rather than ptr record) is always returned first..
     else:
         hostv4name = "".join(hostnamelist).strip(".")
     # print(hostv4name)
@@ -30,7 +42,7 @@ for eachv4host in nmapv4_report.hosts:
         v6portset = set()
         hostv6nameornames = eachv6host['hostnames']['hostname']
         if type(hostv6nameornames) == list:
-            # print("We have a list!: ",hostv6name)
+            # print("Hostnames are in a list..: ",hostv6name)  # similar to the issue presented with multiple hostnames for IPv4..
             hostv6name = hostv6nameornames[0]['@name'].strip(".")
         else:
             hostv6name = eachv6host['hostnames']['hostname']['@name'].strip(".")
@@ -38,15 +50,14 @@ for eachv4host in nmapv4_report.hosts:
         if hostv4name == hostv6name:
             match = True
             # print("We have a match!: ",hostv4name,hostv6name)
-            # print(hostv4name,hostv6name)
             hostv6ports = eachv6host['ports']
             for eachv6port in hostv6ports['port']:
                 try:
-                    # type(eachv6port['@portid'])
-                    # print(eachv6port['@portid'])
+                    # type(eachv6port['@portid'])  # this was for troubleshooting purposes
+                    # print(eachv6port['@portid']) # ""
                     v6portset.add(int(eachv6port['@portid']))
                 except TypeError:
-                    # print("Only one port open on this system...!!!!!!! ")
+                    # print("This likely means only one port open on this system.. ") # was causing an error b/c the OrderedDict for each port was not contained in a list as when there are multiple ports open
                     v6portlist = []
                     v6portlist = [(hostv6ports['port'])]
                     for eachv6port in v6portlist:
@@ -55,17 +66,17 @@ for eachv4host in nmapv4_report.hosts:
                             # print(eachv6port['@portid'])
                             v6portset.add(int(eachv6port['@portid']))
                         except:
-                            print("Hmmm... STILL not working?!?!?!?!")
+                            print("Hmmm... if this still isn't working, I'm not sure..") # but hasn't come up yet..
             break
         else:
             # print("Hostname does not match; returning to 'for eachv6host' loop...")
             continue
     if match != True:
-        print("Hmmm.... no matching hostname in IP6 output for",hostv4name,"...")
+        print("Hmmm.... no matching hostname in IP6 output for",hostv4name,"...") # need to look more closely into why this occurs.. but doesn't appear to be an issue with this script..
     # print("The ports accessible via IPv4 are: ",v4portset)
     # print("The ports accessible via IPv6 are: ",v6portset)
     v4diffset = v4portset.difference(v6portset)
-    # if len(v4diffset) != 0:
+    # if len(v4diffset) != 0:  # uncomment if care to see ports only accessible via IPv4..
         # print("The ports accessible only via IPv4 are: ",v4diffset)
     v6diffset = v6portset.difference(v4portset)
     if len(v6diffset) != 0:
