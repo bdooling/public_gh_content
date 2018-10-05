@@ -6,6 +6,7 @@ v0.3: Functional, albeit ugly and a few minor bugs still to work out..
 """
 
 import sys
+import os
 from libnmap.parser import NmapParser  # ref. https://libnmap.readthedocs.io/
 import xmltodict  # ref. https://github.com/martinblech/xmltodict
 
@@ -20,6 +21,11 @@ except:
 
 v4results = sys.argv[1]  # to convert to argparse..
 v6results = sys.argv[2]  # ""
+
+if os.path.exists(sys.argv[3]):
+    os.remove(sys.argv[3])
+else:
+    print("The output files does not yet exist; Ok..")
 
 # started out parsing nmap xml with NmapParser...:
 nmapv4_report = NmapParser.parse_fromfile(v4results)
@@ -74,8 +80,9 @@ for eachv4host in nmapv4_report.hosts:
                             except:
                                 print("Hmmm... if this still isn't working, I'm not sure..") # but hasn't come up yet..
             except KeyError:
-                # print("This likely means no open ports on this system.. ")
+                # print("KeyError - This likely means no open IPv6 ports on this system.. ")
                 # print("No ports open via IPv6; moving to next IPv4 hostname..")
+                continue
             break
         else:
             # print("Hostname does not match; returning to 'for eachv6host' loop...")
