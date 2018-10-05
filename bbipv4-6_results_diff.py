@@ -2,9 +2,10 @@
 #-*- coding: UTF-8 -*-
 
 """
-v0.3: Functional, albeit needs to be commented and a few minor bugs still to work out..
+v0.3: Functional, albeit ugly and a few minor bugs still to work out..
 """
 
+import sys
 from libnmap.parser import NmapParser  # ref. https://libnmap.readthedocs.io/
 import xmltodict  # ref. https://github.com/martinblech/xmltodict
 
@@ -14,8 +15,11 @@ try:
 except:
     pass
 
-v4results = input("Specify the location of Nmap XML file containing IPv4 scan results (full path): ")
-v6results = input("Specify the location of Nmap XML file containing IPv6 scan results (full path): ")
+# v4results = input("Specify the location of Nmap XML file containing IPv4 scan results (full path): ")  # to replace with CLI argument..
+# v6results = input("Specify the location of Nmap XML file containing IPv6 scan results (full path): ")  # ""
+
+v4results = sys.argv[1]  # to convert to argparse..
+v6results = sys.argv[2]  # ""
 
 # started out parsing nmap xml with NmapParser...:
 nmapv4_report = NmapParser.parse_fromfile(v4results)
@@ -51,22 +55,27 @@ for eachv4host in nmapv4_report.hosts:
             match = True
             # print("We have a match!: ",hostv4name,hostv6name)
             hostv6ports = eachv6host['ports']
-            for eachv6port in hostv6ports['port']:
-                try:
-                    # type(eachv6port['@portid'])  # this was for troubleshooting purposes
-                    # print(eachv6port['@portid']) # ""
-                    v6portset.add(int(eachv6port['@portid']))
-                except TypeError:
-                    # print("This likely means only one port open on this system.. ") # was causing an error b/c the OrderedDict for each port was not contained in a list as when there are multiple ports open
-                    v6portlist = []
-                    v6portlist = [(hostv6ports['port'])]
-                    for eachv6port in v6portlist:
-                        try:
-                            # type(eachv6port['@portid'])
-                            # print(eachv6port['@portid'])
-                            v6portset.add(int(eachv6port['@portid']))
-                        except:
-                            print("Hmmm... if this still isn't working, I'm not sure..") # but hasn't come up yet..
+            # print(hostv6ports)
+            try:
+                for eachv6port in hostv6ports['port']:
+                    try:
+                        # type(eachv6port['@portid'])  # this was for troubleshooting purposes
+                        # print(eachv6port['@portid']) # ""
+                        v6portset.add(int(eachv6port['@portid']))
+                    except TypeError:
+                        # print("This likely means only one port open on this system.. ") # was causing an error b/c the OrderedDict for each port was not contained in a list as when there are multiple ports open  # note there also appears to be a bug that results in this message being printed four times - however, low priority / non-impacting..  # in hindsight, might've been easier to solve these type of issues by just pulling everything into tuples, and attempting to extract by index from there..
+                        v6portlist = []
+                        v6portlist = [(hostv6ports['port'])]
+                        for eachv6port in v6portlist:
+                            try:
+                                # type(eachv6port['@portid'])
+                                # print(eachv6port['@portid'])
+                                v6portset.add(int(eachv6port['@portid']))
+                            except:
+                                print("Hmmm... if this still isn't working, I'm not sure..") # but hasn't come up yet..
+            except KeyError:
+                # print("This likely means no open ports on this system.. ")
+                # print("No ports open via IPv6; moving to next IPv4 hostname..")
             break
         else:
             # print("Hostname does not match; returning to 'for eachv6host' loop...")
@@ -81,4 +90,5 @@ for eachv4host in nmapv4_report.hosts:
     v6diffset = v6portset.difference(v4portset)
     if len(v6diffset) != 0:
         print("Ports accessible only via IPv6 for",hostv6name,"are:",v6diffset)
-
+        with open(sys.argv[3],"a") as fh:
+            fh.write(hostv6name + " " + str(v6diffset) + "\n")
