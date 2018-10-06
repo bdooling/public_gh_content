@@ -42,7 +42,7 @@ for eachv4host in nmapv4_report.hosts:
         hostv4name = "".join(hostnamelist[0].strip("."))  # assume the orig / user-specified fqdn (rather than ptr record) is always returned first..
     else:
         hostv4name = "".join(hostnamelist).strip(".")
-    # print(hostv4name)
+    print(hostv4name)
     v4portset = set()
     for eachv4port in hostv4ports:
         # print(eachv4port)
@@ -59,7 +59,7 @@ for eachv4host in nmapv4_report.hosts:
         # print(hostv6name)
         if hostv4name == hostv6name:
             match = True
-            # print("We have a match!: ",hostv4name,hostv6name)
+            print("We have a match!: ",hostv4name,hostv6name)
             hostv6ports = eachv6host['ports']
             # print(hostv6ports)
             try:
@@ -69,7 +69,7 @@ for eachv4host in nmapv4_report.hosts:
                         # print(eachv6port['@portid']) # ""
                         v6portset.add(int(eachv6port['@portid']))
                     except TypeError:
-                        # print("This likely means only one port open on this system.. ") # was causing an error b/c the OrderedDict for each port was not contained in a list as when there are multiple ports open  # note there also appears to be a bug that results in this message being printed four times - however, low priority / non-impacting..  # in hindsight, might've been easier to solve these type of issues by just pulling everything into tuples, and attempting to extract by index from there..
+                        print("This likely means only one port open on this system.. ") # was causing an error b/c the OrderedDict for each port was not contained in a list as when there are multiple ports open  # note there also appears to be a bug that results in this message being printed four times - however, low priority / non-impacting..  # in hindsight, might've been easier to solve these type of issues by just pulling everything into tuples, and attempting to extract by index from there..
                         v6portlist = []
                         v6portlist = [(hostv6ports['port'])]
                         for eachv6port in v6portlist:
@@ -80,20 +80,20 @@ for eachv4host in nmapv4_report.hosts:
                             except:
                                 print("Hmmm... if this still isn't working, I'm not sure..") # but hasn't come up yet..
             except KeyError:
-                # print("KeyError - This likely means no open IPv6 ports on this system.. ")
+                print("KeyError - This likely means no open IPv6 ports on this system.. ")
                 # print("No ports open via IPv6; moving to next IPv4 hostname..")
                 continue
             break
         else:
-            # print("Hostname does not match; returning to 'for eachv6host' loop...")
+            print("Hostname does not match; returning to 'for eachv6host' loop...")
             continue
     if match != True:
         print("Hmmm.... no matching hostname in IP6 output for",hostv4name,"...") # need to look more closely into why this occurs.. but doesn't appear to be an issue with this script..
-    # print("The ports accessible via IPv4 are: ",v4portset)
-    # print("The ports accessible via IPv6 are: ",v6portset)
+    print("The ports accessible via IPv4 are: ",v4portset)
+    print("The ports accessible via IPv6 are: ",v6portset)
     v4diffset = v4portset.difference(v6portset)
-    # if len(v4diffset) != 0:  # uncomment if care to see ports only accessible via IPv4..
-        # print("The ports accessible only via IPv4 are: ",v4diffset)
+    if len(v4diffset) != 0:  # uncomment if care to see ports only accessible via IPv4..
+        print("The ports accessible only via IPv4 are: ",v4diffset)
     v6diffset = v6portset.difference(v4portset)
     if len(v6diffset) != 0:
         print("Ports accessible only via IPv6 for",hostv6name,"are:",v6diffset)
