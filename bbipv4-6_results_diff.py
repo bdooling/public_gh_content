@@ -2,7 +2,7 @@
 #-*- coding: UTF-8 -*-
 
 """
-v0.4.1: fixed FPs with individually listed filtered/closed ports in IP6 output. Overall, functional with no known major bugs at this point - but still ugly as sin..
+v0.4.2: Changed to always write out to a file, even if no diffs... Overall, functional with no known major bugs at this point - but still ugly as sin..
 """
 
 import sys
@@ -113,3 +113,5 @@ for eachv4host in nmapv4_report.hosts:
         print("Ports accessible only via IPv6 for",hostv6name,"are:",v6diffset)
         with open(sys.argv[3],"a") as fh:
             fh.write(hostv6name + " " + str(v6diffset) + "\n")
+    else:
+        print("No ports accessible only via IPv6 for",hostv4name)
