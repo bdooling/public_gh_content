@@ -69,6 +69,30 @@ for eachv4host in nmapv4_report.hosts:
                         if (eachv6port['state']['@state']) == "open":
                             # for troubleshooting purposes  # would prefer to comment this out - but causes an exception if no contents in this portion of the if statement... ??:
                             print("Open IPv6 port..")
+                            try:
+                                # type(eachv6port['@portid'])  # for troubleshooting purposes
+                                # print(eachv6port['@portid']) # ""
+                                v6portset.add(int(eachv6port['@portid']))
+                            except TypeError:
+                    # print("This likely means only one port open on this
+                    # system.. ") # was causing an error b/c the
+                    # OrderedDict for each port was not contained in a list
+                    # as when there are multiple ports open  # note there
+                    # also appears to be a bug that results in this message
+                    # being printed four times - however, low priority /
+                    # non-impacting..  # in hindsight, might've been easier
+                    # to solve these type of issues by just pulling
+                    # everything into tuples, and attempting to extract by
+                    # index from there..
+                                v6portlist = []
+                                v6portlist = [(hostv6ports['port'])]
+                                for eachv6port in v6portlist:
+                                    try:
+                                        # type(eachv6port['@portid'])
+                                        # print(eachv6port['@portid'])
+                                        v6portset.add(int(eachv6port['@portid']))
+                                    except:
+                                        print("Hmmm... if this still isn't working, I'm not sure..") # but hasn't come up yet..
 
 			# this 'else' clause was apparently causing all port
 			# entries after a non-open port entry to be excluded
@@ -95,33 +119,34 @@ for eachv4host in nmapv4_report.hosts:
                             if (eachv6portstate['@state']) == "open":
                                 # for troubleshooting purposes  # would prefer to comment this out - but causes an exception if no contents in this portion of the if statement... ??:
                                 print("Open IPv6 port..")
- 
-                            else:
-                                break
-                    try:
-                        # type(eachv6port['@portid'])  # for troubleshooting purposes
-                        # print(eachv6port['@portid']) # ""
-                        v6portset.add(int(eachv6port['@portid']))
-                    except TypeError:
-			# print("This likely means only one port open on this
-			# system.. ") # was causing an error b/c the
-			# OrderedDict for each port was not contained in a list
-			# as when there are multiple ports open  # note there
-			# also appears to be a bug that results in this message
-			# being printed four times - however, low priority /
-			# non-impacting..  # in hindsight, might've been easier
-			# to solve these type of issues by just pulling
-			# everything into tuples, and attempting to extract by
-			# index from there..
-                        v6portlist = []
-                        v6portlist = [(hostv6ports['port'])]
-                        for eachv6port in v6portlist:
-                            try:
-                                # type(eachv6port['@portid'])
-                                # print(eachv6port['@portid'])
-                                v6portset.add(int(eachv6port['@portid']))
-                            except:
-                                print("Hmmm... if this still isn't working, I'm not sure..") # but hasn't come up yet..
+                                try:
+                                    # type(eachv6port['@portid'])  # for troubleshooting purposes
+                                    # print(eachv6port['@portid']) # ""
+                                    v6portset.add(int(eachv6port['@portid']))
+                                except TypeError:
+                        # print("This likely means only one port open on this
+                        # system.. ") # was causing an error b/c the
+                        # OrderedDict for each port was not contained in a list
+                        # as when there are multiple ports open  # note there
+                        # also appears to be a bug that results in this message
+                        # being printed four times - however, low priority /
+                        # non-impacting..  # in hindsight, might've been easier
+                        # to solve these type of issues by just pulling
+                        # everything into tuples, and attempting to extract by
+                        # index from there..
+                                    v6portlist = []
+                                    v6portlist = [(hostv6ports['port'])]
+                                    for eachv6port in v6portlist:
+                                        try:
+                                            # type(eachv6port['@portid'])
+                                            # print(eachv6port['@portid'])
+                                            v6portset.add(int(eachv6port['@portid']))
+                                        except:
+                                            print("Hmmm... if this still isn't working, I'm not sure..") # but hasn't come up yet..
+
+                            # else:
+                                # break
+
             except KeyError:
                 # print("KeyError - This likely means no open IPv6 ports on this system.. ")
                 # print("No ports open via IPv6; moving to next IPv4 hostname..")
