@@ -2,7 +2,7 @@
 #-*- coding: UTF-8 -*-
 
 """
-v0.4.4: Adding UDP scanning, and fixing some bugs. Overall, functional with no known major bugs at this point - but still ugly as sin..
+v0.4.5: Added UDP scanning, and fixed some issues when non-open ports are reported individually in nmap XML output. Overall, functional with no known major bugs at this point - but still ugly as sin..
 """
 
 import sys
@@ -68,7 +68,7 @@ for eachv4host in nmapv4_report.hosts:
                         # print(eachv6port)
                         if (eachv6port['state']['@state']) == "open":
                             # for troubleshooting purposes  # would prefer to comment this out - but causes an exception if no contents in this portion of the if statement... ??:
-                            print("Open IPv6 port..")
+                            # print("Open IPv6 port..")
                             try:
                                 # type(eachv6port['@portid'])  # for troubleshooting purposes
                                 # print(eachv6port['@portid']) # ""
@@ -118,7 +118,7 @@ for eachv4host in nmapv4_report.hosts:
                         for eachv6portstate in v6portstatelist:
                             if (eachv6portstate['@state']) == "open":
                                 # for troubleshooting purposes  # would prefer to comment this out - but causes an exception if no contents in this portion of the if statement... ??:
-                                print("Open IPv6 port..")
+                                # print("Open IPv6 port..")
                                 try:
                                     # type(eachv6port['@portid'])  # for troubleshooting purposes
                                     # print(eachv6port['@portid']) # ""
