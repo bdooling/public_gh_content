@@ -40,7 +40,7 @@ ___
 # Interest in ICS
 ## Three primary reasons I'm eager to work further in ICS security:
 1. Better understand the pervasive-but-mostly-unnoticed systems that enable almost every facet of modern life
-    * More driven by desire to learn and diverse experiences than income
+    * More driven by meaningful work, desire to learn, and diverse experiences than income
 2. Encourage kids’ interest in cybersecurity
     * Physical processes can be readily grasped (and are cool!)
 3. Protect societal well-being
