@@ -10,7 +10,7 @@
 * 10+ years pentesting & technical assessments
 * Methodical & deliberate tester; measured risk assessor; detection mindset
 
-### Modest ICS Assessment Experience
+### ICS Assessment Experience
 * Electric & water utilities; oil & gas extraction, refining, and distribution; shipping
 * Asset inventorying; Network architecture reviews; IT-OT PenTests; Physical/social; Config reviews; War-dialing; Wireless/RF
 
@@ -48,4 +48,4 @@ ___
 # Availability for Work
 
 ### I'm available "on demand" / elastically for freelance projects as a 1099 contractor
-* I'm willing and able to travel, eager to learn more about ICS, and **not** concerned with pay rate, title, etc.
+* I'm willing and able to travel, eager to learn more about ICS; **not** highly concerned with pay rate, title, etc.
