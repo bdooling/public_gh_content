@@ -1,4 +1,6 @@
+Aland Islands
 Alaska
+Albania
 Algeria
 Angola
 Argentina
@@ -14,13 +16,16 @@ Barbados
 Belarus
 Belgium
 Belize
+Benin
 Bonaire
 Bosnia-Herzegovina
+Botswana
 Brazil
 Bulgaria
 Canada
 Canary Islands
 Cape Verde
+Cayman Islands
 Ceuta & Melilla
 Chile
 China
@@ -35,6 +40,7 @@ Denmark
 Dodecanese
 Dominican Republic
 Ecuador
+El Salvador
 England
 Estonia
 European Russia
@@ -48,15 +54,19 @@ Guadeloupe
 Guernsey
 Haiti
 Hawaii
+Honduras
 Hungary
 Iceland
 India
+Indonesia
+Iran
 Ireland
 Israel
 Italy
 Jamaica
 Japan
 Jersey
+Jordan
 Kaliningrad
 Kazakhstan
 Kenya
@@ -70,13 +80,14 @@ Malawi
 Malta
 Mexico
 Moldova
+Morocco
 Namibia
 Netherlands
 New Caledonia
 New Zealand
 Nicaragua
-North Macedonia
 Northern Ireland
+North Macedonia
 Norway
 Oman
 Panama
@@ -84,12 +95,14 @@ Poland
 Portugal
 Puerto Rico
 Qatar
+Republic of Kosovo
 Romania
 San Marino
 Sardinia
 Saudi Arabia
 Scotland
 Serbia
+Sint Maarten
 Slovak Republic
 Slovenia
 Spain
@@ -97,9 +110,11 @@ Sri Lanka
 St. Kitts & Nevis
 St. Vincent
 Suriname
+Svalbard
 Sweden
 Switzerland
 Trinidad & Tobago
+Tuvalu
 Ukraine
 United Arab Emirates
 United States
