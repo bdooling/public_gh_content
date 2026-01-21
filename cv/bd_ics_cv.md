@@ -17,6 +17,7 @@
 ### Skills Relevant to ICS Work
 * PenTesting, auditing; asset management; perimeter defense & network monitoring; incident detection and response; scripting
 * I enjoy pragmatic risk analysis, devising mitigations aligned with business constraints, and crafting detection opportunities
+* Amateur radio operator ([W2HIP](https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=5240183))
 
 ### Pride in My Work
 * See: References (and long-running success as a freelancer)
