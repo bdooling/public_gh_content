@@ -107,10 +107,10 @@ James Madison University - BBA: Finance; MIS Dual major focused on economics, fi
 
 University of Texas at Austin -  Contributing Lecturer in the Computer Science Department
 
-Amateur / Ham radio ([KI5QKF](https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=4462624))
+Amateur / Ham radio ([W2HIP](https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=5240183))
 
 
 **REFERENCES**
 
-Refer to [LinkedIn Profile](https://www.linkedin.com/in/robertddooling/). Additional references available upon request.
+Refer to [LinkedIn Profile](https://www.linkedin.com/in/bdooling/). Additional references available upon request.
 
