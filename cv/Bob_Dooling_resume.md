@@ -6,25 +6,35 @@ __Cybersecurity and Risk Management Advisor__
 
 [https://www.linkedin.com/in/bdooling/](https://www.linkedin.com/in/bdooling/)
 
-DC/MD/VA region (703) 597-1993 [bob@equinoxrisk.com](mailto:bob@equinoxrisk.com)
+DC/MD/VA region; (703) 597-1993; bob[at]equinoxrisk[dot]com
 
-**Equinox Risk, LLC** — Founder; Security Advisor June 2022 - Present  (Washington DC region)
+**Equinox Risk, LLC** — Founder, freelance Security Advisor; June 2022 - Present  (Washington DC region)
+* Providing fractional security leadership and objective security assessments.
 
-* Providing holistic security assessments and fractional security leadership.
-* Providing direction and hands-on support as ‘vCISO’ for SMB clients.
-* Helping clients develop GRC programs.
-* Maturing risk management to enable informed decision making.
-* Executing security assessments of ICS / OT environments. 
+**Undisclosed client** - vCISO; August 2022 - Present  (remote / Los Angeles); contract)
+* Providing direction and hands-on support as ‘vCISO’ for AI-powered brand safety and suitability platform.
+* Maturing GRC function to support informed decision-making, and enable sales.
+ 
+**Multiple clients** - Independent Security Advisor; June 2022 - Present  (various; contract)
+* Providing both holistic and focused security and privacy assessments.
+* Training managerial and technical teams on IR processes.
+* Developing and formalizing cybersecurity metrics tracking.
+* Providing security assessments of ICS / OT environments.
+* Providing security assessments of RF / wireless communications.
 
+**Fannie Mae (FNMA)** - Cyber Risk Management Advisor; January - June 2024  (Washington DC; contract)
+* Supporting quantitative, enterprise-wide risk management program.
+* Enabling prioritization, ROI, and informed decisions on cyber risks.
 
-**Redox, Inc.** — Director of Security Risk August 2019 - May 2022  (Remote) 
+**Redox, Inc.** — Director of Security Risk; August 2019 - May 2022  (Remote) 
 
 * Established and matured the cyber risk management function for a rapidly growing, cloud-based healthcare data exchange.
 * Lead security incident management, third party risk, and vulnerability management in conjunction.
-* Partnered with CISO in strategic planning, budgeting, hiring, team development, and prioritization. Interim CISO during outages.
+* Partnered with CISO in strategic planning, budgeting, hiring, team development, and prioritization.
+* Interim CISO during outages.
 
 
-**Praetorian** — Practice Manager December 2013 - January 2018  (Austin, TX)
+**Praetorian** — Practice Manager; December 2013 - January 2018  (Austin, TX)
 
 * Trusted advisor to Fortune 1000, high tech startups, and critical infrastructure providers.
 * Executed and managed a wide variety of security assessment and incident response projects.
@@ -34,7 +44,7 @@ DC/MD/VA region (703) 597-1993 [bob@equinoxrisk.com](mailto:bob@equinoxrisk.com)
 * Performed NIST- and CSC-based assessments of operational technology (OT) in industrial control environments.
 * Spearheaded development of formal testing methodologies for existing and new service offerings. 
 
-**DISD, LLC** — Founder; Security Advisor December 2009 - December 2019  (Austin, TX)
+**DISD, LLC** — Founder, freelance Security Advisor; December 2009 - December 2019  (Austin, TX)
 
 * Provided freelance services specializing in technical security assessments, incident detection and handling, and risk assessments.
 * "Full-stack hacker": executed a wide variety of white box and black box penetration tests.
@@ -42,28 +52,28 @@ DC/MD/VA region (703) 597-1993 [bob@equinoxrisk.com](mailto:bob@equinoxrisk.com)
 * Managed budgeting and billings, leading to \>40% average YoY revenue and profit growth.
 
 
-**SANS Institute** — Author, GIAC Exam Development May 2011 - July 2013  (Remote)
+**SANS Institute** — Author, GIAC Exam Development; May 2011 - July 2013  (Remote)
 
 * Created and reviewed content for ISO/ANSI-certified cybersecurity exams. 
 
 
-**Texas DIR** — Sr. Information Security Consultant October 2008 - January 2011  (Austin, TX)
+**Texas DIR** — Sr. Information Security Consultant; October 2008 - January 2011  (Austin, TX)
 
 * Executed self-directed penetration tests for Texas state agencies, municipalities, universities, and utilities.
 * Presented findings, demonstrated exploits; discussed risks and prioritized recommendations.
 
 
-**Symantec Corporation** — Sr. Information Security Engineer June 2006 - August 2008  (Remote)
+**Symantec Corporation** — Sr. Information Security Engineer; June 2006 - August 2008  (Remote)
 
 * Security specialist on a SIEM product delivery team.  
 
 
-**Symantec Corporation** — Network Security Analyst, MSS November 2003 - June 2006  (Washington, DC)
+**Symantec Corporation** — Network Security Analyst, MSS; November 2003 - June 2006  (Washington, DC)
 
 * Identified, escalated, and managed security incidents in a 24x7x365 SOC. 
 
 
-**Arthur Andersen / Protiviti** — Technology Risk Consultant June 2001 - November 2003  (Washington, DC)
+**Arthur Andersen / Protiviti** — Technology Risk Consultant; June 2001 - November 2003  (Washington, DC)
 
 * Performed audit and analysis of clients' security controls to help ensure integrity of financial statements.
 
