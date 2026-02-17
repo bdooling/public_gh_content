@@ -13,7 +13,7 @@ DC/MD/VA region; (703) 597-1993; bob[at]equinoxrisk[dot]com
 
 **Undisclosed client** - vCISO; August 2022 - Present  (remote / Los Angeles); contract)
 * Providing direction and hands-on support as ‘vCISO’ for AI-powered brand safety and suitability platform.
-* Maturing GRC function to support informed decision-making, and enable sales.
+* Maturing GRC function to support informed decision-making, and to enable sales.
  
 **Multiple clients** - Independent Security Advisor; June 2022 - Present  (various; contract)
 * Providing both holistic and focused security and privacy assessments.
