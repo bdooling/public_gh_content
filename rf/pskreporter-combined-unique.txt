@@ -1,8 +1,10 @@
+291
 Aland Islands
 Alaska
 Albania
 Algeria
 Angola
+Anguilla
 Argentina
 Armenia
 Aruba
@@ -11,6 +13,7 @@ Asiatic Turkey
 Australia
 Austria
 Azores
+Bahamas
 Balearic Islands
 Barbados
 Belarus
@@ -22,10 +25,12 @@ Bosnia-Herzegovina
 Botswana
 Brazil
 Bulgaria
+Cameroon
 Canada
 Canary Islands
 Cape Verde
 Cayman Islands
+Central African Republic
 Ceuta & Melilla
 Chile
 China
@@ -34,6 +39,7 @@ Costa Rica
 Crete
 Croatia
 Cuba
+Curacao
 Cyprus
 Czech Republic
 Denmark
@@ -50,6 +56,7 @@ France
 French Guiana
 Georgia
 Greece
+Greenland
 Guadeloupe
 Guernsey
 Haiti
