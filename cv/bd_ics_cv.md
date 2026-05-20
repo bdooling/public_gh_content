@@ -25,28 +25,28 @@
 * ([Cyber Volunteer Task Force](https://defconfranklin.com/CyberTroops.html)) with DEF CON Franklin
 * ([Civilian Reserve ISAC](https://crisac.org/))
 * University of Texas at Austin - Contributing Lecturer
-* Amateur radio - public service operations ([W2HIP](https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=5240183))
+* Amateur radio - public service operations
 
 ### Pride in My Work
-* See: References (and long-running success as a freelancer)
-* I'm self-motivated, and have regularly reinvented - forcing myself to learn new fields within cybersecurity. See: SANS work-study programs; career progression & transitions.
+* See: References and long-running success as a freelancer
+* I'm self-motivated, and have chosen to pursue new fields within cybersecurity throughout my career (See: SANS work-study programs; career progression & transitions)
 
 ___
 
 # My Interest in ICS
 
-**I'm primarily driven by meaningful work, desire to learn, and diverse experiences**
+**I'm primarily driven by meaningful work and desire to learn**
     
 ## Three main reasons I'm eager to work further in ICS security
 1. To better understand the pervasive but largely unnoticed systems that enable almost every facet of modern life.
 
 2. To protect lives, and societal well-being.
 
-3. To improve my own understanding and promote interest in cybersecurity for the next generation (tangible, physical systems with clear kinetic implications).
+3. To enable myself to promote cybersecurity for the next generation (focusing on physical systems with clear kinetic and welfare implications).
 
 ___
 
 # Availability for Work
 
-### I'm available "on demand" / elastically for freelance projects as a 1099 contractor
-* I'm willing and able to travel, eager to learn more about ICS; not highly concerned with pay rate or title.
+#### I'm available "on demand" / elastically for freelance projects as a 1099 contractor.
+#### I'm willing and able to travel, eager to learn more about ICS, and not concerned with pay rate or title.
